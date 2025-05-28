@@ -1,92 +1,71 @@
 import { Button } from "@/components/ui/button";
+import AppBreadcrumb from "./shared/AppBreadcrumb";
+import { useTranslation } from "react-i18next";
 
 const HeroBanner = () => {
-  const handleDownloadCatalog = () => {
-    // Criar um JSON com todos os produtos
-    const catalogData = {
-      catalog: "Catálogo Completo de Produtos",
-      generatedAt: new Date().toISOString(),
-      products: [
-        // Aqui virão todos os produtos do site
-        // Por enquanto usando dados mock
-      ],
-    };
+  const { t } = useTranslation();
 
-    // Converter para JSON e fazer download
+  const handleDownloadCatalog = () => {
+    const catalogData = {
+      catalog: t("heroBanner.fullProductCatalog"),
+      generatedAt: new Date().toISOString(),
+      products: [],
+    };
     const dataStr = JSON.stringify(catalogData, null, 2);
     const dataUri =
       "data:application/json;charset=utf-8," + encodeURIComponent(dataStr);
-
-    const exportFileDefaultName = "catalogo-produtos.json";
-
+    const exportFileDefaultName = t("heroBanner.catalogFileName");
     const linkElement = document.createElement("a");
     linkElement.setAttribute("href", dataUri);
     linkElement.setAttribute("download", exportFileDefaultName);
     linkElement.click();
-
-    console.log("Baixando catálogo...");
   };
 
   return (
     <div className="relative w-full">
-      {/* Breadcrumb */}
-      <div className="bg-gray-100 py-3">
-        <div className="max-w-7xl mx-auto px-4">
-          <nav className="text-sm">
-            <span>Início</span>
-            <span className="mx-2">→</span>
-            <span className="text-purple-600">Linha Orthopedic</span>
-          </nav>
-        </div>
-      </div>
-
-      {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-purple-100 to-pink-100 min-h-[500px]">
-        <div className="max-w-7xl mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="space-y-6">
-              <div>
-                <h1 className="text-4xl lg:text-5xl font-bold text-purple-800 mb-4">
-                  LINHA
-                </h1>
-                <h2 className="text-4xl lg:text-5xl font-bold text-purple-600 mb-6">
-                  ORTHOPEDIC
-                  <div className="w-32 h-1 bg-purple-600 mt-2"></div>
-                </h2>
+      <div
+        className="relative min-h-[100px] sm:min-h-[400px] lg:min-h-[600px] bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/banners/hero-banner.png')" }}
+      >
+        <div className="relative z-10">
+          <AppBreadcrumb
+            wrapperDivClassName="bg-transparent pt-4"
+            paths={[
+              { label: t("heroBanner.home"), href: "/" },
+              { label: t("heroBanner.orthopedicLine") },
+            ]}
+          />
+          <div className="max-w-7xl mx-auto px-4 py-12 sm:py-20 lg:py-28">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              <div className="space-y-6 text-left">
+                <img
+                  src="/images/titles/orthopedic-line.png"
+                  alt={t("heroBanner.orthopedicLine")}
+                />{" "}
+                <ul className="space-y-3 text-gray-700 text-base max-w-lg">
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-gray-800 rounded-full mt-[0.4rem] mr-3 flex-shrink-0"></span>
+                    <span>{t("heroBanner.productDevelopmentInfo")}</span>
+                  </li>
+                </ul>
               </div>
-
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-start">
-                  <span className="w-2 h-2 bg-purple-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span>
-                    Produtos desenvolvidos para auxiliar na prevenção e retorno
-                    das atividades, no tratamento e recuperação de pacientes com
-                    lesões ortopédicas.
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="relative">
-              <img
-                src="/lovable-uploads/c615da18-7208-482f-be15-dbd1fef858b1.png"
-                alt="Profissional usando órtese"
-                className="w-full h-auto rounded-lg shadow-lg"
-              />
             </div>
           </div>
         </div>
       </div>
 
-      {/* Product Families Section */}
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-12">
             <h3 className="text-2xl font-bold text-gray-800 mb-2">
-              Conheça as{" "}
-              <span className="text-purple-600">famílias exclusivas</span>
+              {t("heroBanner.discoverExclusiveFamiliesLine1")}{" "}
+              <span className="text-purple-600">
+                {t("heroBanner.discoverExclusiveFamiliesLine2")}
+              </span>
             </h3>
-            <p>da linha Orthopedic</p>
+            <p className="text-gray-600">
+              {t("heroBanner.discoverExclusiveFamiliesLine3")}
+            </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-8">
@@ -103,22 +82,17 @@ const HeroBanner = () => {
                 key={index}
                 className={`${family.color} text-white px-4 py-2 rounded-full text-sm font-medium hover:opacity-80 transition-opacity`}
               >
-                {family.name}
-                <sup className="text-xs">®</sup>
+                {family.name} <sup className="text-xs">®</sup>
               </button>
             ))}
           </div>
 
           <div className="bg-gray-50 rounded-lg p-6">
             <p className="text-gray-700 mb-4">
-              <strong>
-                Família voltada para extrair os benefícios do Neoprene.
-              </strong>
+              <strong>{t("heroBanner.neopreneFamilyBenefit")}</strong>
             </p>
-            <p className=" text-sm">
-              Propriedades térmicas, compressivas e elásticas: são essas três
-              propriedades que fazem do Neoprene uma ferramenta eficaz no
-              tratamento e prevenção de lesões no tratamento ortopédico.
+            <p className="text-gray-600 text-sm">
+              {t("heroBanner.neopreneProperties")}
             </p>
           </div>
 
@@ -127,7 +101,7 @@ const HeroBanner = () => {
               onClick={handleDownloadCatalog}
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-medium"
             >
-              Baixar Catálogo ↓
+              {t("heroBanner.downloadCatalogButton")}
             </Button>
           </div>
         </div>
