@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { ZoomIn } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -14,7 +13,7 @@ const ImageZoom = ({ src, alt }: ImageZoomProps) => {
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isZoomed) return;
-    
+
     const rect = e.currentTarget.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
@@ -22,7 +21,7 @@ const ImageZoom = ({ src, alt }: ImageZoomProps) => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       className="relative bg-white rounded-lg p-8 flex items-center justify-center min-h-96 cursor-zoom-in overflow-hidden"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsZoomed(true)}
@@ -33,50 +32,54 @@ const ImageZoom = ({ src, alt }: ImageZoomProps) => {
       whileHover={{ scale: 1.02 }}
     >
       {src ? (
-        <motion.img 
-          src={src} 
+        <motion.img
+          src={src}
           alt={alt}
           className="max-w-full max-h-full object-contain"
           animate={{
             scale: isZoomed ? 1.5 : 1,
           }}
           transition={{ duration: 0.2 }}
-          style={isZoomed ? {
-            transformOrigin: `${mousePosition.x}% ${mousePosition.y}%`
-          } : {}}
+          style={
+            isZoomed
+              ? {
+                  transformOrigin: `${mousePosition.x}% ${mousePosition.y}%`,
+                }
+              : {}
+          }
         />
       ) : (
-        <motion.div 
+        <motion.div
           className="text-gray-400 text-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          <motion.div 
+          <motion.div
             className="w-32 h-32 bg-gray-200 rounded-lg mx-auto mb-4"
-            animate={{ 
+            animate={{
               scale: [1, 1.05, 1],
             }}
-            transition={{ 
+            transition={{
               duration: 2,
               repeat: Infinity,
-              repeatType: "reverse" 
+              repeatType: "reverse",
             }}
           />
           <p>Imagem do produto</p>
         </motion.div>
       )}
-      
+
       <AnimatePresence>
         {!isZoomed && src && (
-          <motion.div 
+          <motion.div
             className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             whileHover={{ scale: 1.1 }}
           >
-            <ZoomIn className="w-4 h-4 text-gray-600" />
+            <ZoomIn className="w-4 h-4" />
           </motion.div>
         )}
       </AnimatePresence>

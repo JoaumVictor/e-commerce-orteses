@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 
 const HeroBanner = () => {
@@ -10,21 +9,22 @@ const HeroBanner = () => {
       products: [
         // Aqui virão todos os produtos do site
         // Por enquanto usando dados mock
-      ]
+      ],
     };
 
     // Converter para JSON e fazer download
     const dataStr = JSON.stringify(catalogData, null, 2);
-    const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
-    
-    const exportFileDefaultName = 'catalogo-produtos.json';
-    
-    const linkElement = document.createElement('a');
-    linkElement.setAttribute('href', dataUri);
-    linkElement.setAttribute('download', exportFileDefaultName);
+    const dataUri =
+      "data:application/json;charset=utf-8," + encodeURIComponent(dataStr);
+
+    const exportFileDefaultName = "catalogo-produtos.json";
+
+    const linkElement = document.createElement("a");
+    linkElement.setAttribute("href", dataUri);
+    linkElement.setAttribute("download", exportFileDefaultName);
     linkElement.click();
-    
-    console.log('Baixando catálogo...');
+
+    console.log("Baixando catálogo...");
   };
 
   return (
@@ -32,7 +32,7 @@ const HeroBanner = () => {
       {/* Breadcrumb */}
       <div className="bg-gray-100 py-3">
         <div className="max-w-7xl mx-auto px-4">
-          <nav className="text-sm text-gray-600">
+          <nav className="text-sm">
             <span>Início</span>
             <span className="mx-2">→</span>
             <span className="text-purple-600">Linha Orthopedic</span>
@@ -54,18 +54,22 @@ const HeroBanner = () => {
                   <div className="w-32 h-1 bg-purple-600 mt-2"></div>
                 </h2>
               </div>
-              
+
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
                   <span className="w-2 h-2 bg-purple-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                  <span>Produtos desenvolvidos para auxiliar na prevenção e retorno das atividades, no tratamento e recuperação de pacientes com lesões ortopédicas.</span>
+                  <span>
+                    Produtos desenvolvidos para auxiliar na prevenção e retorno
+                    das atividades, no tratamento e recuperação de pacientes com
+                    lesões ortopédicas.
+                  </span>
                 </li>
               </ul>
             </div>
-            
+
             <div className="relative">
-              <img 
-                src="/lovable-uploads/c615da18-7208-482f-be15-dbd1fef858b1.png" 
+              <img
+                src="/lovable-uploads/c615da18-7208-482f-be15-dbd1fef858b1.png"
                 alt="Profissional usando órtese"
                 className="w-full h-auto rounded-lg shadow-lg"
               />
@@ -79,9 +83,10 @@ const HeroBanner = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="mb-12">
             <h3 className="text-2xl font-bold text-gray-800 mb-2">
-              Conheça as <span className="text-purple-600">famílias exclusivas</span>
+              Conheça as{" "}
+              <span className="text-purple-600">famílias exclusivas</span>
             </h3>
-            <p className="text-gray-600">da linha Orthopedic</p>
+            <p>da linha Orthopedic</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mb-8">
@@ -92,7 +97,7 @@ const HeroBanner = () => {
               { name: "Air Flex", color: "bg-gray-400" },
               { name: "Softline", color: "bg-gray-400" },
               { name: "Foot Care", color: "bg-gray-400" },
-              { name: "Lean", color: "bg-gray-400" }
+              { name: "Lean", color: "bg-gray-400" },
             ].map((family, index) => (
               <button
                 key={index}
@@ -106,15 +111,19 @@ const HeroBanner = () => {
 
           <div className="bg-gray-50 rounded-lg p-6">
             <p className="text-gray-700 mb-4">
-              <strong>Família voltada para extrair os benefícios do Neoprene.</strong>
+              <strong>
+                Família voltada para extrair os benefícios do Neoprene.
+              </strong>
             </p>
-            <p className="text-gray-600 text-sm">
-              Propriedades térmicas, compressivas e elásticas: são essas três propriedades que fazem do Neoprene uma ferramenta eficaz no tratamento e prevenção de lesões no tratamento ortopédico.
+            <p className=" text-sm">
+              Propriedades térmicas, compressivas e elásticas: são essas três
+              propriedades que fazem do Neoprene uma ferramenta eficaz no
+              tratamento e prevenção de lesões no tratamento ortopédico.
             </p>
           </div>
 
           <div className="flex justify-center mt-8">
-            <Button 
+            <Button
               onClick={handleDownloadCatalog}
               className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-lg font-medium"
             >

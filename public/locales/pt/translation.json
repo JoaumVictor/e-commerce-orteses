@@ -1,0 +1,17 @@
+{
+  "header": {
+    "contact": "Fale conosco",
+    "products": "Produtos",
+    "about": "Sobre nós",
+    "contactUs": "Contato",
+    "catalogs": "Catálogos"
+  },
+  "searchProduct": {
+    "placeholder": "Buscar produtos por nome ou código..."
+  },
+  "selectLanguage": {
+    "pt": "Português",
+    "en": "Inglês",
+    "es": "Espanhol"
+  }
+}

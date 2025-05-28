@@ -99,4 +99,11 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  h1,
+  h2,
+  p,
+  a {
+    color: #4c4d4c;
+  }
 }

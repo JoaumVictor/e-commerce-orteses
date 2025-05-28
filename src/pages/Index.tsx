@@ -1,13 +1,15 @@
-
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const Index = () => {
   const navigate = useNavigate();
+  const { lang } = useParams<{ lang: string }>();
 
   useEffect(() => {
-    navigate("/products");
-  }, [navigate]);
+    if (lang) {
+      navigate(`/${lang}/products`, { replace: true });
+    }
+  }, [navigate, lang]);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">

@@ -25,18 +25,18 @@ export interface Product {
 
 export const families = [
   "Orthopedic",
-  "Sports", 
+  "Sports",
   "Special Cares",
   "Foot Care",
-  "Acessibilidade"
+  "Acessibilidade",
 ];
 
 export const technologies = [
   "Air Technology",
-  "Gel Technology", 
+  "Gel Technology",
   "Memory Foam",
   "Carbon Fiber",
-  "Silicone"
+  "Silicone",
 ];
 
 export const categories = [
@@ -44,7 +44,7 @@ export const categories = [
   "Palmilhas",
   "Suportes",
   "Bandagens",
-  "Acessórios"
+  "Acessórios",
 ];
 
 export const products: Product[] = [
@@ -61,22 +61,22 @@ export const products: Product[] = [
     level: "Nível 3",
     indication: "Recuperação e tratamento de lesões GRAVES",
     model: "Bilateral",
-    availableColors: [
-      { name: "Preto", value: "#000000" }
-    ],
+    availableColors: [{ name: "Preto", value: "#000000" }],
     availableSizes: ["Único", "Especial"],
-    description: "A Órtese Splint Bilateral Hidrolight é feita de neoprene Plush, com propriedades isolantes térmicas e um acabamento elegante em plush.",
-    detailedDescription: "A Órtese Splint Bilateral Hidrolight é feita de neoprene Plush, com propriedades isolantes térmicas e um acabamento elegante em plush. Possui ampla capacidade de ajuste devido à aderência do tecido. Em repouso, a órtese já está pré-ajustada, com fechamento do polegar e uma membrana elástica que funciona como um bolso, facilitando a colocação pelo próprio paciente. As talas internas são facilmente ajustáveis para se adaptarem à mão desejada. São fornecidas duas talas removíveis, uma com curvatura ideal para sustentar o punho até a palma da mão, e a segunda reta na parte dorsal do punho, impedindo movimentos para cima e para baixo. O elástico aderente envolve a articulação, proporcionando compressão de acordo com a indicação médica e a necessidade do paciente.",
+    description:
+      "A Órtese Splint Bilateral Hidrolight é feita de neoprene Plush, com propriedades isolantes térmicas e um acabamento elegante em plush.",
+    detailedDescription:
+      "A Órtese Splint Bilateral Hidrolight é feita de neoprene Plush, com propriedades isolantes térmicas e um acabamento elegante em plush. Possui ampla capacidade de ajuste devido à aderência do tecido. Em repouso, a órtese já está pré-ajustada, com fechamento do polegar e uma membrana elástica que funciona como um bolso, facilitando a colocação pelo próprio paciente. As talas internas são facilmente ajustáveis para se adaptarem à mão desejada. São fornecidas duas talas removíveis, uma com curvatura ideal para sustentar o punho até a palma da mão, e a segunda reta na parte dorsal do punho, impedindo movimentos para cima e para baixo. O elástico aderente envolve a articulação, proporcionando compressão de acordo com a indicação médica e a necessidade do paciente.",
     images: [
       "/placeholder.svg",
-      "/placeholder.svg", 
       "/placeholder.svg",
       "/placeholder.svg",
-      "/placeholder.svg"
-    ]
+      "/placeholder.svg",
+      "/placeholder.svg",
+    ],
   },
   {
-    id: "2", 
+    id: "2",
     name: "Órtese Soft Curta sem Polegar",
     code: "OR1066",
     isLaunch: true,
@@ -87,10 +87,10 @@ export const products: Product[] = [
     indication: "Recuperação e prevenção",
     availableColors: [
       { name: "Preto", value: "#000000" },
-      { name: "Bege", value: "#F5F5DC" }
+      { name: "Bege", value: "#F5F5DC" },
     ],
     availableSizes: ["P", "M", "G", "GG"],
-    images: ["/placeholder.svg"]
+    images: ["/placeholder.svg"],
   },
   {
     id: "3",
@@ -100,7 +100,7 @@ export const products: Product[] = [
     family: "Sports",
     technology: "Air Technology",
     category: "Órteses",
-    images: ["/placeholder.svg"]
+    images: ["/placeholder.svg"],
   },
   {
     id: "4",
@@ -108,19 +108,19 @@ export const products: Product[] = [
     code: "OR1051",
     isLaunch: true,
     family: "Special Cares",
-    technology: "Air Technology", 
+    technology: "Air Technology",
     category: "Suportes",
-    images: ["/placeholder.svg"]
+    images: ["/placeholder.svg"],
   },
   {
     id: "5",
-    name: "Órtese Soft Curta com Polegar", 
+    name: "Órtese Soft Curta com Polegar",
     code: "OR1065",
     isLaunch: false,
     family: "Foot Care",
     technology: "Silicone",
     category: "Palmilhas",
-    images: ["/placeholder.svg"]
+    images: ["/placeholder.svg"],
   },
   {
     id: "6",
@@ -130,17 +130,17 @@ export const products: Product[] = [
     family: "Acessibilidade",
     technology: "Carbon Fiber",
     category: "Bandagens",
-    images: ["/placeholder.svg"]
+    images: ["/placeholder.svg"],
   },
   {
     id: "7",
     name: "Órtese Safe Air",
-    code: "OR1051", 
+    code: "OR1051",
     isLaunch: true,
     family: "Orthopedic",
     technology: "Memory Foam",
     category: "Acessórios",
-    images: ["/placeholder.svg"]
+    images: ["/placeholder.svg"],
   },
   {
     id: "8",
@@ -148,22 +148,22 @@ export const products: Product[] = [
     code: "OR1065",
     isLaunch: false,
     family: "Sports",
-    technology: "Gel Technology", 
+    technology: "Gel Technology",
     category: "Órteses",
-    images: ["/placeholder.svg"]
+    images: ["/placeholder.svg"],
   },
   {
-    id: "9", 
+    id: "9",
     name: "Órtese Soft Curta sem Polegar",
     code: "OR1066",
     isLaunch: true,
     family: "Special Cares",
     technology: "Air Technology",
     category: "Suportes",
-    images: ["/placeholder.svg"]
-  }
+    images: ["/placeholder.svg"],
+  },
 ];
 
 export const getProductById = (id: string): Product | undefined => {
-  return products.find(product => product.id === id);
+  return products.find((product) => product.id === id);
 };
