@@ -12,7 +12,8 @@
     "for": "para",
     "loadingProducts": "Carregando produtos...",
     "noProductsFound": "Produto não encontrado",
-    "clearFilters": "Limpar filtros"
+    "clearFilters": "Limpar filtros",
+    "clear": "Limpar"
   },
   "header": {
     "contact": "Fale conosco",
@@ -40,17 +41,26 @@
     "discoverExclusiveFamiliesLine3": "da linha Orthopedic",
     "neopreneFamilyBenefit": "Família voltada para extrair os benefícios do Neoprene.",
     "neopreneProperties": "Propriedades térmicas, compressivas e elásticas: são essas três propriedades que fazem do Neoprene uma ferramenta eficaz no tratamento e prevenção de lesões no tratamento ortopédico.",
-    "downloadCatalogButton": "Baixar Catálogo ↓"
+    "downloadCatalogButton": "Baixar Catálogo"
   },
   "downloadCatalog": {
     "title": "Catálogo Completo de Produtos",
     "description": "Baixe o catálogo completo de produtos Orthopedic para conhecer todas as opções disponíveis.",
-    "downloadButton": "Baixar Catálogo ↓"
+    "downloadButton": "Baixar Catálogo"
   },
   "products": {
     "newProduct": "Lançamento",
     "loadingProducts": "Carregando produtos...",
     "noProductsFound": "Produto não encontrado",
     "productCode": "Cód. Produto"
+  },
+  "filterSidebar": {
+    "filters": "Filtros",
+    "newProducts": "Lançamentos",
+    "justNewProducts": "Apenas lançamentos",
+    "familysAndTecnologies": "Famílias/Tecnologias",
+    "familys": "Famílias",
+    "tecnologies": "Tecnologias",
+    "products": "Produtos"
   }
 }

@@ -11,6 +11,7 @@ import FilterSidebar from "@/components/FilterSidebar";
 import ProductSkeleton from "@/components/ProductSkeleton";
 import ProductCard from "@/components/ProductCard";
 import SearchProduct from "@/components/SearchProduct";
+import { DownloadIcon } from "lucide-react";
 
 const Products = () => {
   const { t } = useTranslation();
@@ -181,7 +182,7 @@ const Products = () => {
           />
         </motion.div>
 
-        <div className="flex-1 p-6">
+        <div className="flex-1 px-6">
           <motion.div
             className="mb-6 flex justify-between items-center"
             initial={{ opacity: 0, y: -20 }}
@@ -214,6 +215,7 @@ const Products = () => {
                 disabled={isLoading}
               >
                 {t("downloadCatalog.downloadButton")}
+                <DownloadIcon />
               </Button>
             </motion.div>
           </motion.div>
