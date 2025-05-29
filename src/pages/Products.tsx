@@ -1,16 +1,19 @@
 import { useState, useMemo, useCallback, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Header from "@/components/layout/Header";
-import HeroBanner from "@/components/HeroBanner";
-import FilterSidebar from "@/components/FilterSidebar";
-import ProductCard from "@/components/ProductCard";
-import ProductSkeleton from "@/components/ProductSkeleton";
+import { AnimatePresence, motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { products } from "@/data/products";
 import { useProductFilters } from "@/hooks/useProductFilters";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/layout/Footer";
+import Header from "@/components/layout/Header";
+import HeroBanner from "@/components/HeroBanner";
+import FilterSidebar from "@/components/FilterSidebar";
+import ProductSkeleton from "@/components/ProductSkeleton";
+import ProductCard from "@/components/ProductCard";
+import SearchProduct from "@/components/SearchProduct";
 
 const Products = () => {
+  const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const productsPerPage = 6;
@@ -41,18 +44,15 @@ const Products = () => {
 
   const handleDownloadCatalog = useCallback(() => {
     const catalogData = {
-      catalog: "Catálogo Completo de Produtos",
+      catalog: t("downloadCatalog.downloadButton"),
       generatedAt: new Date().toISOString(),
       totalProducts: products.length,
       products: products,
     };
-
     const dataStr = JSON.stringify(catalogData, null, 2);
     const dataUri =
       "data:application/json;charset=utf-8," + encodeURIComponent(dataStr);
-
     const exportFileDefaultName = "catalogo-produtos.json";
-
     const linkElement = document.createElement("a");
     linkElement.setAttribute("href", dataUri);
     linkElement.setAttribute("download", exportFileDefaultName);
@@ -179,25 +179,32 @@ const Products = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.2 }}
           >
-            <h1 className="text-2xl font-bold text-gray-800">
-              {isLoading
-                ? "Carregando produtos..."
-                : `${filteredProducts.length} produto${
-                    filteredProducts.length !== 1 ? "s" : ""
-                  }`}
-              {!isLoading && filters.searchTerm && (
-                <span className="text-lg font-normal text-gray-600 ml-2">
-                  para "{filters.searchTerm}"
-                </span>
-              )}
-            </h1>
+            <div className="flex items-center justify-center space-x-4">
+              <h1 className="text-sm font-bold text-gray-800 bg-gray-100 p-2 rounded-md">
+                {isLoading
+                  ? t("common.loadingProducts")
+                  : `${filteredProducts.length} produto${
+                      filteredProducts.length !== 1 ? "s" : ""
+                    }`}
+                {!isLoading && filters.searchTerm && (
+                  <span className="text-lg font-normal text-gray-600 ml-2">
+                    {t("common.for")} "{filters.searchTerm}"
+                  </span>
+                )}
+              </h1>
+              <SearchProduct
+                searchTerm={filters.searchTerm}
+                onSearchChange={handleSearchChange}
+                className="w-64 md:w-80 lg:w-96"
+              />
+            </div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
                 className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded transition-colors"
                 onClick={handleDownloadCatalog}
                 disabled={isLoading}
               >
-                Baixar Catálogo ↓
+                {t("downloadCatalog.downloadButton")}
               </Button>
             </motion.div>
           </motion.div>
@@ -231,14 +238,14 @@ const Products = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
               >
                 <p className="text-gray-500 text-lg mb-4">
-                  Nenhum produto encontrado com os filtros aplicados.
+                  {t("common.noProductsFound")}
                 </p>
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Button onClick={clearFilters} variant="outline">
-                    Limpar filtros
+                    {t("common.clearFilters")}
                   </Button>
                 </motion.div>
               </motion.div>

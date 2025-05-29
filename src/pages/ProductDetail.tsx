@@ -22,8 +22,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useTranslation } from "react-i18next";
 
 const ProductDetail = () => {
+  const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedImage, setSelectedImage] = useState("");
@@ -100,7 +102,7 @@ const ProductDetail = () => {
                   <BreadcrumbList>
                     <BreadcrumbItem>
                       <BreadcrumbLink asChild>
-                        <Link to="/">Início</Link>
+                        <Link to="/">{t("common.start")}</Link>
                       </BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
@@ -122,7 +124,7 @@ const ProductDetail = () => {
                   transition={{ delay: 0.2 }}
                 >
                   <div className="text-sm  mb-2">{product?.technology}</div>
-                  <h1 className="text-3xl font-bold text-purple-700 mb-6">
+                  <h1 className="text-3xl font-bold text-purple mb-6">
                     {product?.name}
                   </h1>
 
