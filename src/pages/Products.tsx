@@ -16,7 +16,7 @@ const Products = () => {
   const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
-  const productsPerPage = 6;
+  const productsPerPage = 9;
 
   const {
     filters,
@@ -61,6 +61,9 @@ const Products = () => {
 
   const paginatedProducts = useMemo(() => {
     const startIndex = (currentPage - 1) * productsPerPage;
+    if (startIndex >= filteredProducts.length) {
+      return [];
+    }
     return filteredProducts.slice(startIndex, startIndex + productsPerPage);
   }, [filteredProducts, currentPage, productsPerPage]);
 
@@ -144,9 +147,15 @@ const Products = () => {
     return buttons;
   }, [currentPage, totalPages, handlePageChange]);
 
+  useEffect(() => {
+    if (currentPage > totalPages && totalPages > 0) {
+      setCurrentPage(1);
+    }
+  }, [currentPage, totalPages]);
+
   return (
     <motion.div
-      className="min-h-screen bg-gray-50"
+      className="min-h-screen"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}

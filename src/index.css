@@ -92,12 +92,7 @@
 
 @layer base {
   * {
-    @apply border-border;
     font-family: "Raleway", sans-serif;
-  }
-
-  body {
-    @apply bg-background text-foreground;
   }
 
   h1,

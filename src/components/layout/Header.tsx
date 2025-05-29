@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SearchProduct from "../SearchProduct";
 import SelectLanguage from "../shared/SelectLanguage";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
   searchTerm: string;
@@ -12,6 +13,7 @@ interface HeaderProps {
 }
 
 const Header = memo(({ searchTerm, onSearchChange }: HeaderProps) => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -26,7 +28,7 @@ const Header = memo(({ searchTerm, onSearchChange }: HeaderProps) => {
     <header className="w-full bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <div>
+          <div className="cursor-pointer" onClick={() => navigate("/")}>
             <h1 className="text-xl font-medium text-[32px]">LOGO</h1>
           </div>
 

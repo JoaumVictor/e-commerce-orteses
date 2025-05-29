@@ -46,5 +46,11 @@
     "title": "Catálogo Completo de Produtos",
     "description": "Baixe o catálogo completo de produtos Orthopedic para conhecer todas as opções disponíveis.",
     "downloadButton": "Baixar Catálogo ↓"
+  },
+  "products": {
+    "newProduct": "Lançamento",
+    "loadingProducts": "Carregando produtos...",
+    "noProductsFound": "Produto não encontrado",
+    "productCode": "Cód. Produto"
   }
 }
