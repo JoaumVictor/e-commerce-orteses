@@ -48,7 +48,7 @@ const ProductCard = ({ id, name, code, image, isLaunch }: ProductCardProps) => {
       )}
 
       <motion.div
-        className="flex items-center justify-center overflow-hidden min-h-[400px] mb-2"
+        className="flex items-center justify-center overflow-hidden lg:max-h-[400px] mb-4 lg:mb-2"
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.2 }}
       >
@@ -56,14 +56,14 @@ const ProductCard = ({ id, name, code, image, isLaunch }: ProductCardProps) => {
           <img
             src={image}
             alt={name}
-            className="w-full h-full object-contain"
+            className="w-full h-full object-cover lg:object-contain"
           />
         ) : (
           <div className="w-32 h-32 bg-gray-200 rounded-lg"></div>
         )}
       </motion.div>
 
-      <h3 className="font-medium text-gray-800 mb-2 text-sm leading-tight">
+      <h3 className="font-bold text-gray-800 mb-2 text-sm leading-tight">
         {name}
       </h3>
       <div className="flex justify-between items-start text-xs">

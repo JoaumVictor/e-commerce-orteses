@@ -49,7 +49,7 @@ const FilterSidebar = memo(
 
     return (
       <motion.div
-        className="w-64 bg-white border border-gray-200 shadow-md rounded-lg"
+        className="md:w-64 bg-white border border-gray-200 shadow-md rounded-lg"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.3 }}

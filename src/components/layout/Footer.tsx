@@ -71,7 +71,7 @@ const Footer = memo(() => {
   return (
     <footer className="bg-[#4C4D4C] text-white mt-16 w-full">
       <div className="mx-auto py-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8 px-6">
           {/* Logo e país */}
           <div className="px-4 md:px-0">
             <h3 className="text-3xl font-medium">{t("footer.logo")}</h3>
@@ -105,7 +105,7 @@ const Footer = memo(() => {
           ))}
         </div>
 
-        <div className="border-t border-white w-full mt-10">
+        <div className="border-t border-white w-full mt-10 px-6">
           <div className="max-w-7xl mx-auto flex items-center justify-between flex-col md:flex-row gap-4 py-10 px-4 md:px-0">
             <div className="flex items-center justify-center gap-2">
               <p className="text-white">{t("footer.select_country")}</p>

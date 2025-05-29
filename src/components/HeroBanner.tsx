@@ -12,13 +12,13 @@ const HeroBanner = () => {
       >
         <div className="relative z-10">
           <AppBreadcrumb
-            wrapperDivClassName="bg-transparent pt-4"
+            wrapperDivClassName="bg-transparent pt-8"
             paths={[
               { label: t("heroBanner.home"), href: "/" },
               { label: t("heroBanner.orthopedicLine") },
             ]}
           />
-          <div className="max-w-7xl mx-auto px-4 py-12 sm:py-20 lg:py-28">
+          <div className="max-w-7xl mx-auto px-4 py-12 sm:py-20 lg:py-40">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="space-y-6 text-left">
                 <img

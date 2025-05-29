@@ -28,9 +28,10 @@ const Products = () => {
   } = useProductFilters(products);
 
   useEffect(() => {
+    // tempo pra vc ver o skeleton que apliquei
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -104,8 +105,8 @@ const Products = () => {
       buttons.push(
         <Button
           key={i}
-          variant={currentPage === i ? "default" : "ghost"}
-          size="sm"
+          variant={currentPage === i ? "circleDefault" : "circle"}
+          size="icon_sm"
           onClick={() => handlePageChange(i)}
         >
           {i}
@@ -124,8 +125,8 @@ const Products = () => {
       buttons.push(
         <Button
           key={totalPages}
-          variant="ghost"
-          size="sm"
+          variant="circle"
+          size="icon_sm"
           onClick={() => handlePageChange(totalPages)}
         >
           {totalPages}
@@ -168,7 +169,7 @@ const Products = () => {
 
       <HeroBanner />
 
-      <div className="max-w-7xl mx-auto flex">
+      <div className="max-w-7xl mx-auto flex flex-col gap-6 md:gap-0 md:flex-row px-4 lg:px-0">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
