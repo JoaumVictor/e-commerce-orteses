@@ -30,6 +30,7 @@ export default {
         gray: {
           DEFAULT: "hsl(var(--gray))",
           foreground: "hsl(var(--gray-foreground))",
+          60: "#EBEBEB",
           100: "#F5F5F5",
           200: "#E5E6E5",
           300: "#4C4D4C",

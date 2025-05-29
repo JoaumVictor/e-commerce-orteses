@@ -42,7 +42,7 @@ const HeroBanner = () => {
 
       <div className="bg-white py-16">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="mb-12 text-center md:text-start w-5/12">
+          <div className="mb-12 text-center md:text-start md:w-5/12">
             <h3 className="text-3xl font-bold text-gray-800 mb-2">
               {t("heroBanner.discoverExclusiveFamiliesLine1")}{" "}
               <span className="text-purple">
@@ -71,7 +71,7 @@ const HeroBanner = () => {
             ))}
           </div>
 
-          <div className="rounded-lg w-5/12">
+          <div className="rounded-lg md:w-5/12">
             <p className="text-sm">{t("heroBanner.neopreneFamilyBenefit")}</p>
             <p className="text-gray-600 text-sm">
               {t("heroBanner.neopreneProperties")}

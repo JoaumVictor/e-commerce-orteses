@@ -1,5 +1,5 @@
-import i18n from "@/lib/i18n";
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import {
@@ -9,6 +9,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useTranslation } from "react-i18next";
+
+const supportedLangs = ["pt", "en", "es"];
 
 const flagMap: Record<string, string> = {
   pt: "/images/flags/pt.png",
@@ -17,16 +20,30 @@ const flagMap: Record<string, string> = {
 };
 
 const SelectLanguage = () => {
-  const [language, setLanguage] = useState(i18n.language || "pt");
+  const location = useLocation();
+  const navigate = useNavigate();
+  const { lang } = useParams<{ lang: string }>();
+  const { i18n } = useTranslation();
+
+  const [language, setLanguage] = useState(lang || i18n.language || "pt");
 
   const handleChangeLanguage = (value: string) => {
-    setLanguage(value);
+    if (!supportedLangs.includes(value)) return;
+
+    const currentPath = location.pathname;
+    const newPath = currentPath.replace(/^\/(pt|en|es)/, `/${value}`);
     i18n.changeLanguage(value);
+    localStorage.setItem("appLang", value);
+    setLanguage(value);
+    navigate(newPath, { replace: true });
   };
 
   useEffect(() => {
-    setLanguage(i18n.language);
-  }, []);
+    if (lang && supportedLangs.includes(lang)) {
+      setLanguage(lang);
+      i18n.changeLanguage(lang);
+    }
+  }, [lang]);
 
   return (
     <motion.div whileHover={{ scale: 1.05 }}>
@@ -44,9 +61,12 @@ const SelectLanguage = () => {
           </SelectValue>
         </SelectTrigger>
         <SelectContent>
-          {Object.entries(flagMap).map(([lang, src]) => (
-            <SelectItem key={lang} value={lang}>
-              <img src={src} alt={lang} className="w-7 h-4 rounded-sm" />
+          {Object.entries(flagMap).map(([langCode, flag]) => (
+            <SelectItem key={langCode} value={langCode}>
+              <div className="flex items-center space-x-2">
+                <img src={flag} alt={langCode} className="w-7 h-4 rounded-sm" />
+                <span className="capitalize">{langCode}</span>
+              </div>
             </SelectItem>
           ))}
         </SelectContent>

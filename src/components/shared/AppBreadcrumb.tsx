@@ -40,7 +40,6 @@ const AppBreadcrumb: React.FC<AppBreadcrumbProps> = ({
           <BreadcrumbList>
             {paths.map((path, index) => {
               const isLastItem = index === paths.length - 1;
-
               return (
                 <React.Fragment key={path.label + index}>
                   <BreadcrumbItem>
