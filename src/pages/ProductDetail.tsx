@@ -169,7 +169,7 @@ const ProductDetail = () => {
                   transition={{ delay: 0.3 }}
                 >
                   <p className="font-semibold mb-2">{product.technology}</p>
-                  <h1 className="bg-purple text-white text-3xl md:text-[48px] font-bold py-2 px-4 rounded-xl">
+                  <h1 className="bg-purple text-white text-3xl md:text-[48px] font-bold p-4 rounded-xl">
                     {product?.name}
                   </h1>
 
