@@ -56,7 +56,7 @@ const AppBreadcrumb: React.FC<AppBreadcrumbProps> = ({
                     ) : (
                       <BreadcrumbLink
                         href={path.href || "#"}
-                        className={cn(linkClassName, "text-[#989D9E]")}
+                        className={cn(linkClassName, "text-gray-400")}
                       >
                         {path.label}
                       </BreadcrumbLink>

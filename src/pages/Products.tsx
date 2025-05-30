@@ -227,7 +227,7 @@ const Products = () => {
               </Button>
             </motion.div>
 
-            <div className="flex sm:hidden">
+            <div className="flex sm:hidden w-full items-center justify-center">
               <SearchProduct
                 searchTerm={filters.searchTerm}
                 onSearchChange={handleSearchChange}

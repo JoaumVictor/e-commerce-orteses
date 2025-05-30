@@ -17,14 +17,14 @@ const Index = () => {
   }, [navigate, lang]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-10">
       <div className="text-center">
         <img
           src="/images/titles/orthopedic-line.png"
           alt="logotipo"
           className="mb-8"
         />
-        <motion.h1 className="text-3xl font-medium mb-4">
+        <motion.h1 className="text-lg md:text-3xl font-medium mb-4">
           {t("common.loading")}
         </motion.h1>
       </div>
