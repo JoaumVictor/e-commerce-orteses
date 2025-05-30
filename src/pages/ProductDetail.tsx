@@ -17,6 +17,7 @@ import { useTranslation } from "react-i18next";
 import AppBreadcrumb from "@/components/shared/AppBreadcrumb";
 import { DownloadIcon } from "lucide-react";
 import Footer from "@/components/layout/Footer";
+import RelatedProductsCarousel from "@/components/RelatedProductsCarousel";
 
 const ProductDetail = () => {
   const { t } = useTranslation();
@@ -91,7 +92,7 @@ const ProductDetail = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="px-10"
+            className="p-4 md:px-10"
           >
             <div className="max-w-7xl mx-auto py-6">
               <motion.div
@@ -123,7 +124,11 @@ const ProductDetail = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <ImageZoom src={mainImage} alt={product?.name || ""} />
+                  <ImageZoom
+                    src={mainImage}
+                    images={productImages}
+                    alt={product?.name || ""}
+                  />
 
                   {productImages.length > 1 && (
                     <ImageCarousel
@@ -134,7 +139,7 @@ const ProductDetail = () => {
                   )}
 
                   <motion.div
-                    className="mt-6"
+                    className="mt-6 flex items-center justify-center md:justify-start"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
@@ -145,7 +150,7 @@ const ProductDetail = () => {
                     >
                       <Button
                         variant="ghost"
-                        className="text-orange  transition-colors"
+                        className="text-orange transition-colors"
                         onClick={() => {
                           console.log("Download product folder");
                         }}
@@ -163,8 +168,8 @@ const ProductDetail = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <p className="font-semibold">{product.technology}</p>
-                  <h1 className="bg-purple text-white text-[48px] font-bold py-2 px-4 rounded-xl">
+                  <p className="font-semibold mb-2">{product.technology}</p>
+                  <h1 className="bg-purple text-white text-3xl md:text-[48px] font-bold py-2 px-4 rounded-xl">
                     {product?.name}
                   </h1>
 
@@ -371,7 +376,7 @@ const ProductDetail = () => {
                   src={getYouTubeEmbedUrl(
                     "https://www.youtube.com/watch?v=dTS_aNfpbIM&pp=ygURcmVwbyBpIGxvdmUgbXVzaWPSBwkJsAkBhyohjO8%3D"
                   )}
-                  className="w-full min-h-[600px] object-contain mb-20"
+                  className="w-full min-h-[300px] md:min-h-[600px] object-contain mb-20"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 }}
@@ -393,80 +398,95 @@ const ProductDetail = () => {
               >
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="details">
-                    <AccordionTrigger>Detalhes</AccordionTrigger>
+                    <AccordionTrigger>
+                      {t("productDetail.mockDetails.detailsTrigger")}
+                    </AccordionTrigger>
                     <AccordionContent>
                       <div className="space-y-2 text-sm">
                         <p>
-                          <span className="font-medium">Nível:</span>{" "}
-                          {product?.level || "Nível 3"}
+                          <span className="font-medium">
+                            {t("productDetail.mockDetails.level")}
+                          </span>{" "}
+                          {product?.level ||
+                            t("productDetail.mockDetails.defaultLevel")}
                         </p>
                         <p>
                           <span className="font-medium">
-                            Recuperação e tratamento de lesões GRAVES
+                            {t("productDetail.mockDetails.recoveryTreatment")}
                           </span>
                         </p>
                         <p>
-                          <span className="font-medium">Nome Comercial:</span>{" "}
-                          Órtese Splint Bilateral
-                        </p>
-                        <p>
-                          <span className="font-medium">Linha:</span> Orthopedic
+                          <span className="font-medium">
+                            {t("productDetail.mockDetails.commercialName")}
+                          </span>{" "}
+                          {t("productDetail.mockDetails.splintBilateral")}
                         </p>
                         <p>
                           <span className="font-medium">
-                            Cód. Produto (referência/SKU):
+                            {t("productDetail.mockDetails.line")}
+                          </span>{" "}
+                          {t("productDetail.mockDetails.orthopedic")}
+                        </p>
+                        <p>
+                          <span className="font-medium">
+                            {t("productDetail.mockDetails.productCode")}
                           </span>{" "}
                           {product?.code}
                         </p>
                         <p>
                           <span className="font-medium">
-                            Família de Produtos:
+                            {t("productDetail.mockDetails.productFamily")}
                           </span>{" "}
-                          Hidrolight Neo
+                          {t("productDetail.mockDetails.hidrolightNeo")}
                         </p>
                         <p>
                           <span className="font-medium">
-                            Modelos do produto(esquerda/direita - bilateral):
+                            {t("productDetail.mockDetails.models")}
                           </span>{" "}
-                          Bilateral
+                          {t("productDetail.mockDetails.bilateral")}
                         </p>
                         <p>
-                          <span className="font-medium">Composição:</span> 74%
-                          borracha de cloropreno, 16% polamida e 10%poliéster e
-                          15%PVC
+                          <span className="font-medium">
+                            {t("productDetail.mockDetails.composition")}
+                          </span>{" "}
+                          {t("productDetail.mockDetails.compositionValue")}
                         </p>
                         <p className="text-orange-600 font-medium">
-                          PRODUTO TÉRMICO
+                          {t("productDetail.mockDetails.thermalProduct")}
                         </p>
                       </div>
                     </AccordionContent>
                   </AccordionItem>
 
                   <AccordionItem value="specifications">
-                    <AccordionTrigger>Especificações técnicas</AccordionTrigger>
+                    <AccordionTrigger>
+                      {t("productDetail.mockDetails.specificationsTrigger")}
+                    </AccordionTrigger>
                     <AccordionContent>
                       <div className="text-sm ">
-                        Especificações técnicas serão adicionadas aqui.
+                        {t("productDetail.mockDetails.specificationsContent")}
                       </div>
                     </AccordionContent>
                   </AccordionItem>
 
                   <AccordionItem value="instructions">
                     <AccordionTrigger>
-                      Indicações e Instruções de uso
+                      {t("productDetail.mockDetails.instructionsTrigger")}
                     </AccordionTrigger>
                     <AccordionContent>
                       <div className="text-sm ">
-                        Indicações e instruções de uso serão adicionadas aqui.
+                        {t("productDetail.mockDetails.instructionsContent")}
                       </div>
                     </AccordionContent>
                   </AccordionItem>
 
                   <AccordionItem value="warranty">
-                    <AccordionTrigger>Garantia</AccordionTrigger>
+                    <AccordionTrigger>
+                      {t("productDetail.mockDetails.warrantyTrigger")}
+                    </AccordionTrigger>
                     <AccordionContent>
                       <div className="text-sm ">
-                        Informações sobre garantia serão adicionadas aqui.
+                        {t("productDetail.mockDetails.warrantyContent")}
                       </div>
                     </AccordionContent>
                   </AccordionItem>
@@ -479,12 +499,7 @@ const ProductDetail = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1.3 }}
               >
-                <h2 className="text-2xl font-bold mb-6">
-                  Conheça também nossos outros produtos
-                </h2>
-                <div className="text-center text-gray-500 py-12">
-                  <p>Seção de produtos relacionados será implementada aqui</p>
-                </div>
+                <RelatedProductsCarousel currentProductId={id} />
               </motion.div>
             </div>
           </motion.div>

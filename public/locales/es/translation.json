@@ -81,5 +81,47 @@
     "follow_us": "Síguenos también en las redes sociales",
     "select_country": "Seleccionar País",
     "copyright": "© 2024 Lorem Ipsum. Todos los derechos reservados.\nAv. das flores, 150 - Florianópolis - SC - Brasil"
+  },
+  "appBreadcrumb": {
+    "orthopedicLine": "Línea Ortopédica"
+  },
+  "productDetail": {
+    "downloadFolder": "Descargar Carpeta del Producto",
+    "SKUCode": "Código SKU:",
+    "rightSide": "Lado Derecho",
+    "leftSide": "Lado Izquierdo",
+    "description": "Descripción",
+    "colors": "Colores Disponibles:",
+    "model": "Modelo:",
+    "sizes": "Tamaños Disponibles:",
+    "discoverYourSize": "Descubre tu Tamaño Ideal",
+    "table": "Tabla de Medidas",
+    "shopsOnline": "Encontrar Tiendas Online",
+    "seeler": "¿Te gustó este producto? Sé un Vendedor",
+    "seeMore": "Conoce También Nuestros Otros Productos",
+    "mockDetails": {
+      "detailsTrigger": "Detalles",
+      "level": "Nivel:",
+      "defaultLevel": "Nivel 3",
+      "recoveryTreatment": "Recuperación y tratamiento de lesiones GRAVES",
+      "commercialName": "Nombre Comercial:",
+      "splintBilateral": "Órtesis Splint Bilateral",
+      "line": "Línea:",
+      "orthopedic": "Ortopédica",
+      "productCode": "Cód. Producto (Referencia/SKU):",
+      "productFamily": "Familia de Productos:",
+      "hidrolightNeo": "Hidrolight Neo",
+      "models": "Modelos del producto (izquierda/derecha - bilateral):",
+      "bilateral": "Bilateral",
+      "composition": "Composición:",
+      "compositionValue": "74% caucho de neopreno, 16% poliamida, 10% poliéster y 15% PVC",
+      "thermalProduct": "PRODUCTO TÉRMICO",
+      "specificationsTrigger": "Especificaciones Técnicas",
+      "specificationsContent": "Las especificaciones técnicas se añadirán aquí.",
+      "instructionsTrigger": "Indicaciones e Instrucciones de Uso",
+      "instructionsContent": "Las indicaciones e instrucciones de uso se añadirán aquí.",
+      "warrantyTrigger": "Garantía",
+      "warrantyContent": "La información sobre garantía se añadirá aquí."
+    }
   }
 }

@@ -97,6 +97,31 @@
     "discoverYourSize": "Descubra o seu tamanho ideal",
     "table": "Tabela de medidas",
     "shopsOnline": "Encontrar lojas online",
-    "seeler": "Gostou desse produto? Seja um vendedor"
+    "seeler": "Gostou desse produto? Seja um vendedor",
+    "seeMore": "Conheça também nossos outros produtos",
+    "mockDetails": {
+      "detailsTrigger": "Detalhes",
+      "level": "Nível:",
+      "defaultLevel": "Nível 3",
+      "recoveryTreatment": "Recuperação e tratamento de lesões GRAVES",
+      "commercialName": "Nome Comercial:",
+      "splintBilateral": "Órtese Splint Bilateral",
+      "line": "Linha:",
+      "orthopedic": "Orthopedic",
+      "productCode": "Cód. Produto (referência/SKU):",
+      "productFamily": "Família de Produtos:",
+      "hidrolightNeo": "Hidrolight Neo",
+      "models": "Modelos do produto(esquerda/direita - bilateral):",
+      "bilateral": "Bilateral",
+      "composition": "Composição:",
+      "compositionValue": "74% borracha de cloropreno, 16% polamida e 10% poliéster e 15% PVC",
+      "thermalProduct": "PRODUTO TÉRMICO",
+      "specificationsTrigger": "Especificações técnicas",
+      "specificationsContent": "Especificações técnicas serão adicionadas aqui.",
+      "instructionsTrigger": "Indicações e Instruções de uso",
+      "instructionsContent": "Indicações e instruções de uso serão adicionadas aqui.",
+      "warrantyTrigger": "Garantia",
+      "warrantyContent": "Informações sobre garantia serão adicionadas aqui."
+    }
   }
 }

@@ -1272,3 +1272,11 @@ export const getProductById = (
     lang === "pt" ? products_pt : lang === "en" ? products_en : products_es;
   return products.find((product) => product.id === id);
 };
+
+export const getProducts = (lang: string): Product[] => {
+  return lang === "pt"
+    ? products_pt
+    : lang === "en"
+    ? products_en
+    : products_es;
+};

@@ -21,6 +21,7 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import NotFound from "./pages/NotFound";
 import "@/lib/i18n";
+import { useScrollToTop } from "./hooks/use-scrool-to-top";
 
 const queryClient = new QueryClient();
 const supportedLangs = ["pt", "en", "es"];
@@ -30,6 +31,7 @@ const LangWrapper = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const { i18n } = useTranslation();
+  useScrollToTop();
 
   useEffect(() => {
     const currentPath = location.pathname;

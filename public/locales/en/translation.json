@@ -81,5 +81,47 @@
     "follow_us": "Follow us on social media",
     "select_country": "Select Country",
     "copyright": "© 2024 Lorem Ipsum. All rights reserved.\nAv. das flores, 150 - Florianópolis - SC - Brazil"
+  },
+  "appBreadcrumb": {
+    "orthopedicLine": "Orthopedic Line"
+  },
+  "productDetail": {
+    "downloadFolder": "Download Product Folder",
+    "SKUCode": "SKU Code:",
+    "rightSide": "Right Side",
+    "leftSide": "Left Side",
+    "description": "Description",
+    "colors": "Available Colors:",
+    "model": "Model:",
+    "sizes": "Available Sizes:",
+    "discoverYourSize": "Discover Your Ideal Size",
+    "table": "Size Chart",
+    "shopsOnline": "Find Online Stores",
+    "seeler": "Liked this product? Become a Seller",
+    "seeMore": "Check Out Our Other Products",
+    "mockDetails": {
+      "detailsTrigger": "Details",
+      "level": "Level:",
+      "defaultLevel": "Level 3",
+      "recoveryTreatment": "Recovery and treatment of SEVERE injuries",
+      "commercialName": "Commercial Name:",
+      "splintBilateral": "Splint Bilateral Orthosis",
+      "line": "Line:",
+      "orthopedic": "Orthopedic",
+      "productCode": "Product Code (Reference/SKU):",
+      "productFamily": "Product Family:",
+      "hidrolightNeo": "Hidrolight Neo",
+      "models": "Product Models (left/right - bilateral):",
+      "bilateral": "Bilateral",
+      "composition": "Composition:",
+      "compositionValue": "74% neoprene rubber, 16% polyamide, 10% polyester, and 15% PVC",
+      "thermalProduct": "THERMAL PRODUCT",
+      "specificationsTrigger": "Technical Specifications",
+      "specificationsContent": "Technical specifications will be added here.",
+      "instructionsTrigger": "Indications and Usage Instructions",
+      "instructionsContent": "Indications and usage instructions will be added here.",
+      "warrantyTrigger": "Warranty",
+      "warrantyContent": "Warranty information will be added here."
+    }
   }
 }

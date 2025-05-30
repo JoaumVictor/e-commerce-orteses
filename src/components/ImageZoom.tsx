@@ -5,9 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 interface ImageZoomProps {
   src: string;
   alt: string;
+  images: string[];
 }
 
-const ImageZoom = ({ src, alt }: ImageZoomProps) => {
+const ImageZoom = ({ src, alt, images }: ImageZoomProps) => {
   const [isZoomed, setIsZoomed] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -18,6 +19,10 @@ const ImageZoom = ({ src, alt }: ImageZoomProps) => {
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
     setMousePosition({ x, y });
+  };
+
+  const index = () => {
+    return images.findIndex((each) => each === src) + 1;
   };
 
   return (
@@ -71,15 +76,23 @@ const ImageZoom = ({ src, alt }: ImageZoomProps) => {
       )}
 
       <AnimatePresence>
+        <motion.div
+          className="absolute bottom-4 left-1/2 bg-[#8d8d8d] rounded-md p-1 shadow-lg opacity-80"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.8 }}
+        >
+          <p className="text-white text-md">{`${index()}/${images.length}`}</p>
+        </motion.div>
         {!isZoomed && src && (
           <motion.div
-            className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg"
+            className="absolute bottom-4 right-4 bg-[#8d8d8d] rounded-md p-1 shadow-lg opacity-80"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             whileHover={{ scale: 1.1 }}
           >
-            <ZoomIn className="w-4 h-4" />
+            <ZoomIn className="w-5 h-5 text-white" />
           </motion.div>
         )}
       </AnimatePresence>
