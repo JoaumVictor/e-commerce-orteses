@@ -27,6 +27,9 @@ export default {
         purple: {
           DEFAULT: "#792780",
         },
+        orange: {
+          DEFAULT: "#E57200",
+        },
         gray: {
           DEFAULT: "hsl(var(--gray))",
           foreground: "hsl(var(--gray-foreground))",

@@ -22,7 +22,7 @@ const ImageZoom = ({ src, alt }: ImageZoomProps) => {
 
   return (
     <motion.div
-      className="relative bg-white rounded-lg p-8 flex items-center justify-center min-h-96 cursor-zoom-in overflow-hidden"
+      className="relative bg-white rounded-lg flex items-center justify-center min-h-96 cursor-zoom-in overflow-hidden max-h-[600px] w-full"
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsZoomed(true)}
       onMouseLeave={() => setIsZoomed(false)}
@@ -35,9 +35,9 @@ const ImageZoom = ({ src, alt }: ImageZoomProps) => {
         <motion.img
           src={src}
           alt={alt}
-          className="max-w-full max-h-full object-contain"
+          className="max-w-full max-h-full object-cover"
           animate={{
-            scale: isZoomed ? 1.5 : 1,
+            scale: isZoomed ? 1.5 : 1.12,
           }}
           transition={{ duration: 0.2 }}
           style={

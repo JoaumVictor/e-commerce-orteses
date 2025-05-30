@@ -8,6 +8,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { cn } from "@/lib/utils";
 
 interface BreadcrumbPath {
   label: string;
@@ -35,7 +36,7 @@ const AppBreadcrumb: React.FC<AppBreadcrumbProps> = ({
 
   return (
     <div className={wrapperDivClassName}>
-      <div className="max-w-7xl mx-auto px-4 text-black font-bold">
+      <div className="max-w-7xl mx-auto">
         <Breadcrumb className={navClassName}>
           <BreadcrumbList>
             {paths.map((path, index) => {
@@ -44,13 +45,18 @@ const AppBreadcrumb: React.FC<AppBreadcrumbProps> = ({
                 <React.Fragment key={path.label + index}>
                   <BreadcrumbItem>
                     {isLastItem ? (
-                      <BreadcrumbPage className={activeItemClassName}>
+                      <BreadcrumbPage
+                        className={cn(
+                          activeItemClassName,
+                          "text-black font-bold"
+                        )}
+                      >
                         {path.label}
                       </BreadcrumbPage>
                     ) : (
                       <BreadcrumbLink
                         href={path.href || "#"}
-                        className={linkClassName}
+                        className={cn(linkClassName, "text-[#989D9E]")}
                       >
                         {path.label}
                       </BreadcrumbLink>

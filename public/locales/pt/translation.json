@@ -81,5 +81,22 @@
     "follow_us": "Acompanhe também nas redes sociais",
     "select_country": "Selecionar País",
     "copyright": "© 2024 Lorem Ipsum. Todos os direitos reservados.\nAv. das flores, 150 - Florianópolis - SC - Brasil"
+  },
+  "appBreadcrumb": {
+    "orthopedicLine": "Linha Orthopedic"
+  },
+  "productDetail": {
+    "downloadFolder": "Baixar Folder do Produto",
+    "SKUCode": "Código SKU:",
+    "rightSide": "Lado direito",
+    "leftSide": "Lado Esquerdo",
+    "description": "Descrição",
+    "colors": "Cores disponíveis:",
+    "model": "Modelo:",
+    "sizes": "Tamanhos disponíveis:",
+    "discoverYourSize": "Descubra o seu tamanho ideal",
+    "table": "Tabela de medidas",
+    "shopsOnline": "Encontrar lojas online",
+    "seeler": "Gostou desse produto? Seja um vendedor"
   }
 }

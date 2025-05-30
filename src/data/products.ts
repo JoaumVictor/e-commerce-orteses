@@ -72,6 +72,10 @@ export const products_pt: Product[] = [
       "/images/products/produto2.png",
       "/images/products/produto3.png",
       "/images/products/produto4.png",
+      "/images/products/produto1.png",
+      "/images/products/produto2.png",
+      "/images/products/produto3.png",
+      "/images/products/produto4.png",
     ],
   },
   {

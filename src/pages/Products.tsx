@@ -35,7 +35,7 @@ const Products = () => {
     // tempo pra vc ver o skeleton que apliquei
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
