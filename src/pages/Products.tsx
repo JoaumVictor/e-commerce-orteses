@@ -1,7 +1,7 @@
 import { useState, useMemo, useCallback, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { products } from "@/data/products";
+import { products_pt, products_en, products_es } from "@/data/products";
 import { useProductFilters } from "@/hooks/useProductFilters";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/layout/Footer";
@@ -12,12 +12,16 @@ import ProductSkeleton from "@/components/ProductSkeleton";
 import ProductCard from "@/components/ProductCard";
 import SearchProduct from "@/components/SearchProduct";
 import { DownloadIcon } from "lucide-react";
+import { useParams } from "react-router-dom";
 
 const Products = () => {
+  const { lang } = useParams<{ lang: string }>();
   const { t } = useTranslation();
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   const productsPerPage = 9;
+  const products =
+    lang === "pt" ? products_pt : lang === "en" ? products_en : products_es;
 
   const {
     filters,
@@ -185,13 +189,13 @@ const Products = () => {
 
         <div className="flex-1 px-6">
           <motion.div
-            className="mb-6 flex justify-between items-center"
+            className="mb-6 flex justify-center sm:justify-between items-center flex-wrap sm:flex-nowrap gap-4 sm:gap-0"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.2 }}
           >
-            <div className="flex items-center justify-center space-x-4">
-              <h1 className="text-sm font-bold text-gray-800 bg-gray-100 p-2 rounded-md">
+            <div className="flex items-center justify-center sm:justify-start space-x-4 mr-4 md:md-0 sm:w-full">
+              <span className="font-bold text-gray-800 bg-gray-100 p-2 rounded-md text-sm">
                 {isLoading
                   ? t("common.loadingProducts")
                   : `${filteredProducts.length} produto${
@@ -202,12 +206,15 @@ const Products = () => {
                     {t("common.for")} "{filters.searchTerm}"
                   </span>
                 )}
-              </h1>
-              <SearchProduct
-                searchTerm={filters.searchTerm}
-                onSearchChange={handleSearchChange}
-                className="w-64 md:w-80 lg:w-96"
-              />
+              </span>
+
+              <div className=" hidden sm:flex">
+                <SearchProduct
+                  searchTerm={filters.searchTerm}
+                  onSearchChange={handleSearchChange}
+                  className=" w-52 md:w-80 lg:w-96"
+                />
+              </div>
             </div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button
@@ -219,6 +226,14 @@ const Products = () => {
                 <DownloadIcon />
               </Button>
             </motion.div>
+
+            <div className="flex sm:hidden">
+              <SearchProduct
+                searchTerm={filters.searchTerm}
+                onSearchChange={handleSearchChange}
+                className=" w-52 md:w-80 lg:w-96"
+              />
+            </div>
           </motion.div>
 
           <AnimatePresence mode="wait">

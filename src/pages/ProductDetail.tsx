@@ -26,7 +26,7 @@ import { useTranslation } from "react-i18next";
 
 const ProductDetail = () => {
   const { t } = useTranslation();
-  const { id } = useParams<{ id: string }>();
+  const { lang, id } = useParams<{ lang: string; id: string }>();
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedImage, setSelectedImage] = useState("");
   const [selectedSize, setSelectedSize] = useState("");
@@ -50,7 +50,7 @@ const ProductDetail = () => {
     return <Navigate to="/products" replace />;
   }
 
-  const product = getProductById(id);
+  const product = getProductById(id, lang);
 
   if (!product && !isLoading) {
     return <Navigate to="/products" replace />;

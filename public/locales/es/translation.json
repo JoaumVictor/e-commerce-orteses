@@ -1,0 +1,85 @@
+{
+  "common": {
+    "start": "Inicio",
+    "loading": "Cargando...",
+    "error": "Error al cargar los datos",
+    "noData": "No se encontraron datos",
+    "backToTop": "Volver arriba",
+    "viewMore": "Ver más",
+    "viewLess": "Ver menos",
+    "seeAll": "Ver todos",
+    "close": "Cerrar",
+    "for": "para",
+    "loadingProducts": "Cargando productos...",
+    "noProductsFound": "Producto no encontrado",
+    "clearFilters": "Limpiar filtros",
+    "clear": "Limpiar"
+  },
+  "header": {
+    "contact": "Contáctanos",
+    "products": "Productos",
+    "about": "Sobre nosotros",
+    "contactUs": "Contacto",
+    "catalogs": "Catálogos"
+  },
+  "searchProduct": {
+    "placeholder": "Buscar productos por nombre o código..."
+  },
+  "selectLanguage": {
+    "pt": "Portugués",
+    "en": "Inglés",
+    "es": "Español"
+  },
+  "heroBanner": {
+    "fullProductCatalog": "Catálogo Completo de Productos",
+    "catalogFileName": "catalogo-productos.json",
+    "productDevelopmentInfo": "Productos desarrollados para ayudar en la prevención y retorno a las actividades, tratamiento y recuperación de pacientes con lesiones ortopédicas.",
+    "home": "Inicio",
+    "orthopedicLine": "Línea Ortopédica",
+    "discoverExclusiveFamiliesLine1": "Conoce las",
+    "discoverExclusiveFamiliesLine2": "familias exclusivas",
+    "discoverExclusiveFamiliesLine3": "de la línea Ortopédica",
+    "neopreneFamilyBenefit": "Familia enfocada en aprovechar los beneficios del Neopreno.",
+    "neopreneProperties": "Propiedades térmicas, compresivas y elásticas: estas tres propiedades hacen del Neopreno una herramienta eficaz en el tratamiento y prevención de lesiones ortopédicas.",
+    "downloadCatalogButton": "Descargar Catálogo"
+  },
+  "downloadCatalog": {
+    "title": "Catálogo Completo de Productos",
+    "description": "Descarga el catálogo completo de productos Ortopédicos para conocer todas las opciones disponibles.",
+    "downloadButton": "Descargar Catálogo"
+  },
+  "products": {
+    "newProduct": "Lanzamiento",
+    "loadingProducts": "Cargando productos...",
+    "noProductsFound": "Producto no encontrado",
+    "productCode": "Cód. Producto"
+  },
+  "filterSidebar": {
+    "filters": "Filtros",
+    "newProducts": "Lanzamientos",
+    "justNewProducts": "Solo lanzamientos",
+    "familysAndTecnologies": "Familias/Tecnologías",
+    "familys": "Familias",
+    "tecnologies": "Tecnologías",
+    "products": "Productos"
+  },
+  "footer": {
+    "logo": "LOGO",
+    "institutional": "Institucional",
+    "about_us": "Sobre nosotros",
+    "work_with_us": "Trabaja con nosotros",
+    "catalogs": "Descarga de Catálogos",
+    "general_catalog": "Catálogo general",
+    "orthopedic_line": "Línea Ortopédica",
+    "sports_line": "Línea Deportiva",
+    "special_cares_line": "Línea Cuidados Especiales",
+    "footcare_catalog": "Catálogo Cuidado de Pies",
+    "accessibility_catalog": "Catálogo Accesibilidad",
+    "contact_us": "Ponte en contacto y resuelve tus dudas",
+    "phone": "+55 48 3435 8359",
+    "email": "sac@loremipsum.com o region@loremipsum.com",
+    "follow_us": "Síguenos también en las redes sociales",
+    "select_country": "Seleccionar País",
+    "copyright": "© 2024 Lorem Ipsum. Todos los derechos reservados.\nAv. das flores, 150 - Florianópolis - SC - Brasil"
+  }
+}

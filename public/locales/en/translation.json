@@ -1,0 +1,85 @@
+{
+  "common": {
+    "start": "Start",
+    "loading": "Loading...",
+    "error": "Error loading data",
+    "noData": "No data found",
+    "backToTop": "Back to top",
+    "viewMore": "View more",
+    "viewLess": "View less",
+    "seeAll": "See all",
+    "close": "Close",
+    "for": "for",
+    "loadingProducts": "Loading products...",
+    "noProductsFound": "Product not found",
+    "clearFilters": "Clear filters",
+    "clear": "Clear"
+  },
+  "header": {
+    "contact": "Contact us",
+    "products": "Products",
+    "about": "About us",
+    "contactUs": "Contact",
+    "catalogs": "Catalogs"
+  },
+  "searchProduct": {
+    "placeholder": "Search products by name or code..."
+  },
+  "selectLanguage": {
+    "pt": "Portuguese",
+    "en": "English",
+    "es": "Spanish"
+  },
+  "heroBanner": {
+    "fullProductCatalog": "Complete Product Catalog",
+    "catalogFileName": "product-catalog.json",
+    "productDevelopmentInfo": "Products developed to assist in prevention and return to activities, treatment, and recovery of patients with orthopedic injuries.",
+    "home": "Home",
+    "orthopedicLine": "Orthopedic Line",
+    "discoverExclusiveFamiliesLine1": "Discover the",
+    "discoverExclusiveFamiliesLine2": "exclusive families",
+    "discoverExclusiveFamiliesLine3": "of the Orthopedic Line",
+    "neopreneFamilyBenefit": "Family focused on harnessing the benefits of Neoprene.",
+    "neopreneProperties": "Thermal, compressive, and elastic properties: these three properties make Neoprene an effective tool in the treatment and prevention of orthopedic injuries.",
+    "downloadCatalogButton": "Download Catalog"
+  },
+  "downloadCatalog": {
+    "title": "Complete Product Catalog",
+    "description": "Download the complete Orthopedic product catalog to explore all available options.",
+    "downloadButton": "Download Catalog"
+  },
+  "products": {
+    "newProduct": "New Release",
+    "loadingProducts": "Loading products...",
+    "noProductsFound": "Product not found",
+    "productCode": "Product Code"
+  },
+  "filterSidebar": {
+    "filters": "Filters",
+    "newProducts": "New Releases",
+    "justNewProducts": "Only new releases",
+    "familysAndTecnologies": "Families/Technologies",
+    "familys": "Families",
+    "tecnologies": "Technologies",
+    "products": "Products"
+  },
+  "footer": {
+    "logo": "LOGO",
+    "institutional": "Institutional",
+    "about_us": "About us",
+    "work_with_us": "Work with us",
+    "catalogs": "Catalog Downloads",
+    "general_catalog": "General Catalog",
+    "orthopedic_line": "Orthopedic Line",
+    "sports_line": "Sports Line",
+    "special_cares_line": "Special Cares Line",
+    "footcare_catalog": "Foot Care Catalog",
+    "accessibility_catalog": "Accessibility Catalog",
+    "contact_us": "Get in touch and resolve your doubts",
+    "phone": "+55 48 3435 8359",
+    "email": "sac@loremipsum.com or region@loremipsum.com",
+    "follow_us": "Follow us on social media",
+    "select_country": "Select Country",
+    "copyright": "© 2024 Lorem Ipsum. All rights reserved.\nAv. das flores, 150 - Florianópolis - SC - Brazil"
+  }
+}
